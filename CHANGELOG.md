@@ -1,3 +1,65 @@
+<h3>11/September/2026</h3>
+<sub>
+
+```diff
+• Implement WebSocket broadcasting support in web dashboard server to enable cross-client communication
+• Enhance e621 scraper stability and refine data parsing in scraper and plugin modules
+• Improve connection utility resilience and handler management
+• Minor stability improvements and refactoring for Pinterest downloader plugin
+• Replace MLowCodec with AudioCodec for streamlined VoIP audio handling
+• Clean up redundant dependencies by removing libmlow-wasm
+• Add a URL shortener utility plugin powered by TinyURL's create API
+
+________________________
+
++ Add "plugins/tools/tinyurl.js"
++ Add "lib/package/voip/media/audio-codec.js"
+- Delete "lib/package/voip/media/mlow-codec.js"
+* Edit "lib/package/voip/call/WaCallMediaSession.js"
+* Edit "lib/package/voip/media/h264.js"
+* Edit "lib/package/voip/relay/sctp/association.js"
+* Edit "lib/package/website/server.js"
+* Edit "lib/scrapers/src/e621.js"
+* Edit "lib/utils/connection.js"
+* Edit "package.json"
+* Edit "plugins/dl/e621.js"
+* Edit "plugins/dl/pinterest.js"
+```
+</sub>
+
+<h3>10/September/2026</h3>
+<sub>
+
+```diff
+• Add AlightMotion premium activation plugin with magic link support and session-based re-activation capabilities
+
+________________________
+
++ Add "plugins/tools/alightmotion.js"
+```
+</sub>
+
+<h3>09/September/2026</h3>
+<sub>
+
+```diff
+• Simplify interactive location documentation in README.md
+• Improve CDN connection resilience in website server by adding a retry mechanism with short timeout for flaky upstream requests
+• Enable CORS for auth-related API endpoints in web dashboard to support sandboxed WhatsApp HTML
+• Refactor and optimize core utility functions in simple.js
+• Perform minor connection update in subbot connect plugin
+• Add mute and unmute command plugin for group chat with custom message deletion implementation
+
+________________________
+
++ Add "plugins/group/mute.js"
+* Edit "README.md"
+* Edit "lib/package/website/server.js"
+* Edit "lib/utils/simple.js"
+* Edit "plugins/subbot/connect.js"
+```
+</sub>
+
 <h3>08/September/2026</h3>
 <sub>
 
@@ -98,65 +160,5 @@ ________________________
 * Edit "package.json"
 * Edit "plugins/main/menu.js"
 * Edit "CHANGELOG.md"
-```
-</sub>
-
-<h3>29/August/2026</h3>
-<sub>
-
-```diff
-• Massive refactor of VoIP subsystem: migrated from legacy modules (wasm, feeders, signaling) to a modern, structured modular architecture in lib/package/voip/
-• Update scrapers for Brat and X modules
-• Enhance utility modules including connection handler, converter, and simple message serialization
-• Update various plugins to ensure compatibility with new architecture
-• Add new utilities for canvas manipulation and hot-reload functionality
-• Maintain project dependencies and documentation alignment
-
-________________________
-
-* Edit ".env.example"
-* Edit "README.md"
-* Edit "lib/config.js"
-* Edit "lib/main.js"
-* Edit "lib/package/voip/*.js"
-* Edit "lib/scrapers/src/brat.js"
-* Edit "lib/scrapers/src/x.js"
-* Edit "lib/utils/connection.js"
-* Edit "lib/utils/converter.js"
-* Edit "lib/utils/handler.js"
-* Edit "lib/utils/plugins.js"
-* Edit "lib/utils/simple.js"
-* Edit "package.json"
-* Edit "plugins/dl/x.js"
-* Edit "plugins/group/add.js"
-* Edit "plugins/main/creator.js"
-* Edit "plugins/owner/backup.js"
-* Edit "plugins/owner/call.js"
-* Edit "plugins/subbot/connect.js"
-+ Add "lib/utils/canvas.js"
-+ Add "lib/utils/reload.js"
-```
-</sub>
-
-<h3>22/August/2026</h3>
-<sub>
-
-```diff
-• Replace 'pureimage' with direct font parsing and Sharp in lib/scrapers/src/brat.js for improved performance
-• Remove unused dependency 'pureimage' from package.json
-• Clean up redundant diagnostic logs and unused unknownCallEvent event listeners from VOIP modules
-• Improve safety of worker process communication by catching IPC channel closure errors before calling process.send
-• Optimize project root path estimation in loadVoip using an iterative parent-directory node_modules check
-
-________________________
-
-* Edit "lib/package/voip/index.js"
-* Edit "lib/package/voip/modules/signaling.js"
-* Edit "lib/package/voip/modules/worker.js"
-* Edit "lib/package/voip/voip.js"
-* Edit "lib/scrapers/src/brat.js"
-* Edit "lib/utils/simple.js"
-* Edit "package.json"
-* Edit "plugins/owner/call.js"
 ```
 </sub>
